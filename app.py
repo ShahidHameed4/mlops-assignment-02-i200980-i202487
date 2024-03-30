@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 model = joblib.load('iris_classifier.pkl')
 
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
@@ -17,6 +18,7 @@ def predict():
     ]
     prediction = model.predict([features])[0]
     return jsonify({'prediction': prediction})
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
