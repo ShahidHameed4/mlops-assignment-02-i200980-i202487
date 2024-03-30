@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 import joblib
 
 # Load the Iris Dataset
-iris_data = pd.read_csv("iris.csv")
+iris_data = pd.read_csv("Iris.csv")
 
 # Split data into features and target
 X = iris_data.drop('species', axis=1)
