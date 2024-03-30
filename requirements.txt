@@ -2,4 +2,3 @@ flask
 scikit-learn
 pandas
 joblib
-scikit-learn
