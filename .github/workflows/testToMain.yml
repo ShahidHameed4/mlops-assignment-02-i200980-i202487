@@ -3,22 +3,9 @@ name: Merge to main and Trigger Jenkins Job
 on:
   pull_request:
     branches:
-      - test
+      - main
 
 jobs:
-  merge_to_main:
-    name: Merge to Main
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Merge changes to main
-        run: |
-          git checkout main
-          git merge --no-ff ${{ github.event.pull_request.head.ref }}
-          git push origin main
-
   trigger_jenkins_job:
     name: Trigger Jenkins Job
     runs-on: ubuntu-latest
