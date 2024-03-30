@@ -1,0 +1,22 @@
+name: Merge to main and Trigger Jenkins Job
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  trigger_jenkins_job:
+    name: Trigger Jenkins Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Jenkins Job
+        uses: appleboy/jenkins-action@master
+        with:
+          url: ${{ secrets.JENKINS_URL }}
+          username: ${{ secrets.JENKINS_USERNAME }}
+          password: ${{ secrets.JENKINS_PASSWORD }}
+          job: 'Containerize and Push to Docker Hub'
+          parameters: |
+            BRANCH=main
