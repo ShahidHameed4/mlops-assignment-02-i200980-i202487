@@ -2,3 +2,4 @@ flask
 scikit-learn
 pandas
 joblib
+scikit-learn==1.2.2
