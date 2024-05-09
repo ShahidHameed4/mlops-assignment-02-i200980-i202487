@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Cloning Git Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/abdullah117765/MlopsAssignment1.git'
+                git branch: 'main', url: 'https://github.com/ShahidHameed4/mlops-assignment-02-i200980-i202487'
             }
         }
         stage('Building our image') {
